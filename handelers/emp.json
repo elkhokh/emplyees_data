@@ -47,5 +47,19 @@
         "salary": "5000000",
         "phone": "091198",
         "type": "full_time"
+    },
+    {
+        "name": "yahya",
+        "email": "mustafaelkhokhy@gmail.com",
+        "salary": "645",
+        "phone": "65",
+        "type": "full_time"
+    },
+    {
+        "name": "yahya",
+        "email": "mustafaelkhokhy@gmail.com",
+        "salary": "5",
+        "phone": "6",
+        "type": "full_time"
     }
 ]

@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
  include_once "inc/header.php";
 include_once __DIR__ . "../core/functions.php";
 // include __DIR__ . "../handelers/create_emps.php";
@@ -7,7 +7,6 @@ include_once __DIR__ . "../core/functions.php";
 // include "./core/functions.php";
 ?>
 <h2 class="mt-5">Employee List</h2>
-<?php show_message(); ?>
 <table class="table table-bordered mt-3">
     <thead>
         <tr>
@@ -19,7 +18,9 @@ include_once __DIR__ . "../core/functions.php";
     </thead>
     <tbody>
         <?php
-$users = get_data_from_json(); 
+    // print_r(get_data_from_json());
+
+$users = get_data_from_json('emp.json'); 
             foreach ($users as $user) {
                 if (!empty($user)) {
                     echo "<tr>

@@ -32,12 +32,9 @@ unset($_SESSION['message']);
 
     function get_data_from_json(){
         global $json_file; 
-    if (file_exists($json_file)) {
-        $data = json_decode(file_get_contents($GLOBALS['json_file']), true);
-        if (is_array($data)) {
-            return $data;
-        }
+        $data = (file_exists($json_file))?json_decode(file_get_contents($GLOBALS['json_file']), true):[];
+            return $data; 
     }
-    return []; 
-    }
-    // print_r(get_data_from_json());
+    // print_r(get_data_from_json($GLOBALS['json_file']));
+    // $users = get_data_from_json(__DIR__ . '/../../emp.json');
+    // print_r($users); 

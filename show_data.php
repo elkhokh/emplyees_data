@@ -2,9 +2,6 @@
 session_start();
  include_once "inc/header.php";
 include_once __DIR__ . "../core/functions.php";
-// include __DIR__ . "../handelers/create_emps.php";
-// include "./core/validations.php";
-// include "./core/functions.php";
 ?>
 <h2 class="mt-5">Employee List</h2>
 <?php show_message(); ?>

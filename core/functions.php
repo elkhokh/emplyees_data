@@ -31,12 +31,9 @@ unset($_SESSION['message']);
 
     function get_data_from_json($json_file){
     
-    if (file_exists($json_file)) {
-        $data = json_decode(file_get_contents($json_file), true);
-        if (is_array($data)) {
+    
+        $data = file_exists($json_file)?json_decode(file_get_contents($json_file), true):[];
             return $data;
-        }
-    }
-    return []; 
+
     }
     // print_r(get_data_from_json());

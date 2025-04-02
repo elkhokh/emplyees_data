@@ -43,16 +43,9 @@
     },
     {
         "name": "Mustafa Khalid abd elmonem elkhokh ",
-        "email": "UG_31093658@f-eng.tanta.edu.eg",
+        "email": "UG_31098@f-eng.tanta.edu.eg",
         "salary": "5000000",
         "phone": "091198",
-        "type": "full_time"
-    },
-    {
-        "name": "\u0639\u0645\u0631\u0648 \u0641\u0627\u064a\u0632",
-        "email": "amr@gmail.com",
-        "salary": "4968",
-        "phone": "02547",
         "type": "full_time"
     },
     {
@@ -70,10 +63,24 @@
         "type": "full_time"
     },
     {
-        "name": "",
-        "email": "mustafaelkhokhy@gmail.com",
-        "salary": "21654",
-        "phone": "1564",
+        "name": "mostafa",
+        "email": "UG_31098@f-eng.tanta.edu.eg",
+        "salary": "5645",
+        "phone": "16546",
         "type": "full_time"
+    },
+    {
+        "name": "yahya",
+        "email": "mustafaelkhokhy@gmail.com",
+        "salary": "4564",
+        "phone": "354543",
+        "type": "full_time"
+    },
+    {
+        "name": "ali yasser",
+        "email": "ali@gmail.com",
+        "salary": "457897",
+        "phone": "01004643861",
+        "type": "part_time"
     }
 ]

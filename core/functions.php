@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 // in this function i have to parameter type of alert danger or success and type of empty data from type_of_error
 function set_messages($type_of_alert,$message_of_error){
 $_SESSION['message']=[
@@ -28,12 +30,14 @@ unset($_SESSION['message']);
         file_put_contents($GLOBALS['json_file'],json_encode($user_data,JSON_PRETTY_PRINT));
         return true;
     }
-
-    function get_data_from_json($json_file){
-    
-    
-        $data = file_exists($json_file)?json_decode(file_get_contents($json_file), true):[];
-            return $data;
-
+    function get_data_from_json()
+    {
+        // global $json_file;
+        $file = realpath(__DIR__ . "/../handelers/emp.json");
+        return file_exists($file) ? json_decode(file_get_contents($file), true) : [];
     }
+    // function get_data_from_json($json_file){
+    //     $data = file_exists($json_file)?json_decode(file_get_contents($json_file), true):[];
+    //         return $data;
+    // }
     // print_r(get_data_from_json());

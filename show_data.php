@@ -1,10 +1,9 @@
 <?php
-session_start();
+// session_start();
  include_once "inc/header.php";
 include_once __DIR__ . "../core/functions.php";
 ?>
 <h2 class="mt-5">Employee List</h2>
-<?php show_message(); ?>
 <table class="table table-bordered mt-3">
     <thead>
         <tr>
@@ -16,7 +15,7 @@ include_once __DIR__ . "../core/functions.php";
     </thead>
     <tbody>
         <?php
-$users = get_data_from_json('handelers/emp.json'); 
+$users = get_data_from_json(); 
             foreach ($users as $user) {
                 if (!empty($user)) {
                     echo "<tr>

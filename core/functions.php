@@ -30,14 +30,10 @@ unset($_SESSION['message']);
         return true;
     }
 
-    function get_data_from_json(){
-        global $json_file; 
-    if (file_exists($json_file)) {
-        $data = json_decode(file_get_contents($GLOBALS['json_file']), true);
-        if (is_array($data)) {
-            return $data;
-        }
-    }
-    return []; 
-    }
+function get_data_from_json()
+{
+    // global $json_file;
+    $file = realpath(__DIR__ . "/../handelers/emp.json");
+    return file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+}
     // print_r(get_data_from_json());

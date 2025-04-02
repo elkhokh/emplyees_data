@@ -30,6 +30,7 @@ unset($_SESSION['message']);
         return true;
     }
 
+
 function get_data_from_json()
 {
     // global $json_file;

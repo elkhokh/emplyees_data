@@ -19,7 +19,7 @@ include_once __DIR__ . "../core/functions.php";
     </thead>
     <tbody>
         <?php
-$users = get_data_from_json(); 
+$users = get_data_from_json('handelers/emp.json'); 
             foreach ($users as $user) {
                 if (!empty($user)) {
                     echo "<tr>

@@ -6,7 +6,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="register.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="form_emp.php">Add Employee</a></li>
                 <li class="nav-item"><a class="nav-link" href="show_data.php">Show Data</a></li>
                 <li class="nav-item"><a class="nav-link" href="edit.php">Edit Data</a></li>

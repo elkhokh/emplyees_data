@@ -72,3 +72,29 @@ $flage=false;
     file_put_contents($file,json_encode($data_emps,JSON_PRETTY_PRINT));
     return true;
 }
+
+function delete_data_in_json($value_id){
+    $file=$GLOBALS['json_file'];
+    if(!file_exists($file)) {
+        return false;
+}
+    $data_emps = json_decode(file_get_contents($file), true) ;
+    if(!$data_emps) {
+        return false;
+}
+
+$flage=false;
+    foreach($data_emps as $key => $emp){
+        if($emp['id']==$value_id){
+            unset($data_emps[$key]);
+            $flage=true;
+            break;
+        }
+    }
+    if(!$flage){
+        return false;
+    }
+    file_put_contents($file,json_encode($data_emps,JSON_PRETTY_PRINT));
+    return true;
+
+}

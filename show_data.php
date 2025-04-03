@@ -13,7 +13,8 @@ include_once __DIR__ . "../core/functions.php";
             <th>salary</th>
             <th>Phone</th>
             <th>Type</th>
-            <th></th>
+            <th>Control</th>
+            <th>Control</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +30,12 @@ $users = get_data_from_json();
                         <td>{$user['phone']}</td>
                         <td>{$user['type']}</td>
                         <td><a href='edit.php'?id={$user['id']} class='btn btn-warning btn-sm'>Edit</a></td>
+                    <td>
+                    <form action='handelers/delete_emps.php' method='POST'>
+                <input type='hidden'  name='id' value='{$user['id']}' >
+                    <button class='btn btn-danger btn-sm'>Delete</button>
+                    </form>
+                    </td>
                     </tr>";
                 }}
         ?>

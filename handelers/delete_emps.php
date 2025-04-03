@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD']!=="POST"||!isset($_POST['id'])||empty($_POST['id'
 }
 
 
-$id=$_POST['id'];
+$value_id=$_POST['id'];
 if(delete_data_in_json($value_id)){
     set_messages('success',"data delete successfully");
     header("location: ../show_data.php");

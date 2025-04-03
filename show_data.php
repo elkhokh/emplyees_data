@@ -29,7 +29,7 @@ $users = get_data_from_json();
                         <td>{$user['salary']}</td>
                         <td>{$user['phone']}</td>
                         <td>{$user['type']}</td>
-                        <td><a href='edit.php'?id={$user['id']} class='btn btn-warning btn-sm'>Edit</a></td>
+                        <td><a href='edit.php ?id={$user['id']}' class='btn btn-warning btn-sm'>Edit</a></td>
                     <td>
                     <form action='handelers/delete_emps.php' method='POST'>
                 <input type='hidden'  name='id' value='{$user['id']}' >

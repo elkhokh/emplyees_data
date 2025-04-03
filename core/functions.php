@@ -94,6 +94,7 @@ $flage=false;
     if(!$flage){
         return false;
     }
+    $data_emps=array_values($data_emps);
     file_put_contents($file,json_encode($data_emps,JSON_PRETTY_PRINT));
     return true;
 

@@ -1,50 +1,34 @@
 [
     {
         "id": 1,
-        "name": "fake name",
-        "email": "fake@gmail.com",
-        "salary": "23453",
-        "phone": "0292434",
-        "type": "full_time"
+        "name": "mostafa khalid",
+        "email": "mustafaelkhokhy@gmail.com",
+        "salary": "800000",
+        "phone": "01004643861",
+        "type": "part_time"
     },
     {
         "id": 2,
-        "name": "mostafa elkhokhy",
-        "email": "mostafa@gmail.com",
-        "salary": "34343435",
-        "phone": "344633346234",
-        "type": "full_time"
+        "name": "yahya weal",
+        "email": "yahaya@gmail.com",
+        "salary": "86455",
+        "phone": "01004643861",
+        "type": "part_time"
     },
     {
         "id": 3,
-        "name": "yahya",
-        "email": "yahaya@gmail.com",
-        "salary": "343435",
-        "phone": "3446346234",
+        "name": "sara khalid",
+        "email": "sara@gmail.com",
+        "salary": "8985861",
+        "phone": "010000000",
         "type": "full_time"
     },
     {
         "id": 4,
-        "name": "ali yasser2",
+        "name": "ali yasser",
         "email": "ali@gmail.com",
-        "salary": "3453",
-        "phone": "534543434432",
+        "salary": "8947",
+        "phone": "01065689",
         "type": "full_time"
-    },
-    {
-        "id": 5,
-        "name": "sara khalid",
-        "email": "sara@gmail.com",
-        "salary": "343435",
-        "phone": "342433333333333",
-        "type": "full_time"
-    },
-    {
-        "id": 6,
-        "name": "mostafa",
-        "email": "mostafa@gmail.com",
-        "salary": "34343435",
-        "phone": "344633346234",
-        "type": "part_time"
     }
 ]

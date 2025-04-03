@@ -47,6 +47,28 @@ unset($_SESSION['message']);
     }
     // print_r(get_data_from_json());
 
-function update_data_in_json(){
-    
+function update_data_in_json($value_id,$data_update){
+    $file=$GLOBALS['json_file'];
+    $data_emps =file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+    if(!$data_emps) {
+        return false;
+    }
+
+$flage=false;
+    foreach($data_emps as &$emp){
+        if($emp['id']==$value_id){
+            $emp['name']=$data_update['name'];
+            $emp['email']=$data_update['email'];
+            $emp['salary']=$data_update['salary'];
+            $emp['phone']=$data_update['phone'];
+            $emp['type']=$data_update['type'];
+            $flage=true;
+            break;
+        }
+    }
+    if(!$flage){
+        return false;
+    }
+    file_put_contents($file,json_encode($data_emps,JSON_PRETTY_PRINT));
+    return true;
 }

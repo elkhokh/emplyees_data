@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "fake name",
+        "email": "fake@gmail.com",
+        "salary": "23453",
+        "phone": "0292434",
+        "type": "full_time"
+    },
+    {
+        "id": 2,
+        "name": "mostafa elkhokhy",
+        "email": "mostafa@gmail.com",
+        "salary": "34343435",
+        "phone": "344633346234",
+        "type": "full_time"
+    },
+    {
+        "id": 3,
+        "name": "yahya",
+        "email": "yahaya@gmail.com",
+        "salary": "343435",
+        "phone": "3446346234",
+        "type": "full_time"
+    },
+    {
+        "id": 4,
+        "name": "ali yasser2",
+        "email": "ali@gmail.com",
+        "salary": "3453",
+        "phone": "534543434432",
+        "type": "full_time"
+    },
+    {
+        "id": 5,
+        "name": "sara khalid",
+        "email": "sara@gmail.com",
+        "salary": "343435",
+        "phone": "342433333333333",
+        "type": "full_time"
+    },
+    {
+        "id": 6,
+        "name": "mostafa",
+        "email": "mostafa@gmail.com",
+        "salary": "34343435",
+        "phone": "344633346234",
+        "type": "part_time"
+    }
+]

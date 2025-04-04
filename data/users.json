@@ -40,5 +40,11 @@
         "name": "mostafa",
         "email": "mustafaelkhokhy@gmail.com",
         "password": "$2y$10$kpTvNVu6Wat5nHsHWTycgOl424FOxBu4W\/vub9dO5ijb3WI98N5\/u"
+    },
+    {
+        "id": 8,
+        "name": "yahya",
+        "email": "yahya@gmail.com",
+        "password": "$2y$10$cDOEvLTTitwM0T0rRmBMrumeot0DlTvCraDEIRuuFa3zRwC3NEBh2"
     }
 ]

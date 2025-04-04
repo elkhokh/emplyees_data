@@ -29,6 +29,7 @@ session_start();
     <?php 
     // include "./core/functions.php";
     include_once  "core/functions.php";
+    include_once  "core/validations.php";
     ?>
     <div class="container content mt-4">
         <?php show_message() ;

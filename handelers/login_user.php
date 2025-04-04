@@ -19,7 +19,7 @@ if(login_user($email,$password)){
 }}
 if(!empty($type_of_error)){
 set_messages('danger',$type_of_error);
-header('location: ../show.php');
+header('location: ../show_data.php');
 exit;
 }
 

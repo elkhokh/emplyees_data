@@ -19,7 +19,7 @@
 
     <div class="mb-3">
         <label for="phone" class="form-label">Phone:</label>
-        <input type="text" id="phone" name="phone" class="form-control">
+        <input type="number" min="1000000000" id="phone" name="phone" class="form-control">
     </div>
 
     <div class="mb-3">

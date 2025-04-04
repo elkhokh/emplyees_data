@@ -70,5 +70,13 @@
         "phone": "3333",
         "type": "full_time",
         "id": 11
+    },
+    {
+        "name": "Candace Greene",
+        "email": "puluqelymu@mailinator.com",
+        "salary": "99",
+        "phone": "9279198901",
+        "type": "part_time",
+        "id": 12
     }
 ]

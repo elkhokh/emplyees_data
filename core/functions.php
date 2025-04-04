@@ -124,6 +124,7 @@ $data_of_register=[
         'name'=>$name,
         'email'=>$email,
     ];
+    
     return true;
 }
 
@@ -137,7 +138,7 @@ function login_user($email,$password){
         if($user['email']==$email && password_verify($password,$user['password'])){
             $_SESSION['user']=[
                 'email'=>$email,
-                'password'=>$password,
+                'name'=>$user['name']
             ];
             return true; 
         }

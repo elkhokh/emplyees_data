@@ -71,7 +71,6 @@ function valid_all_data($name,$email,$salary,$phone,$type){
             return "Password must be at least 8 characters long";
         default:
             return null;
-            // return "Password is valid";
     }
 }
 
@@ -85,39 +84,50 @@ $data_reg=[
     'password'=>$password,
     'confirm_password'=>$confirm_passowrd,
 ];
+$type_of_error = [];
+    foreach($data_reg as $key =>$value){
 
-foreach($data_reg as $key =>$value){
-    if($type_of_error=valid_data_require($value,$key)){
-        return $type_of_error;}
+
+        if($type_of_error==valid_data_require($value,$key)){
+            return $type_of_error[] = 'data is required';
+        }
+    }
+
+if($type_of_error   ==  valid_email($email)){
+    return $type_of_error[] = 'valid email, you hack me man !!'; 
+    ;}
+
+if($type_of_error   ==    valid_password($password)){
+    return $type_of_error[] = 'Password must contain at least one uppercase letter';
+    ;}
+
+if($type_of_error  ==  check_confirm_password_valid($password,$confirm_passowrd)){
+    return $type_of_error[] = 'Password is NOT the same confirm Password'; 
+    ;}
+
+    return !$type_of_error ? $data_reg : $type_of_error; 
+
 }
 
-if($type_of_error=valid_email($email)){
-    return $type_of_error;}
 
-if($type_of_error=valid_password($password)){
-    return $type_of_error;}
-
-if($type_of_error=check_confirm_password_valid($password,$confirm_passowrd)){
-    return $type_of_error;}
-
-    return $data_reg;
-}
-
+//  
 function valid_login($email,$password){
     $data_reg=[
         'email'=>$email,
         'password'=>$password,
     ];
+    $type_of_error = [];
     
     foreach($data_reg as $key =>$value){
-        if($type_of_error=valid_data_require($value,$key)){
-            return $type_of_error;}
+        if($type_of_error==valid_data_require($value,$key)){
+            return $type_of_error[] = 'data is required';}
     }
     
-    if($type_of_error=valid_email($email)){
-        return $type_of_error;}
+    if($type_of_error == valid_email($email)){
+        return $type_of_error[] = 'valid email, you hack me man !!';
+    }
     
-        return $data_reg; 
+        return !$type_of_error ? $data_reg : $type_of_error; 
 }
 
 

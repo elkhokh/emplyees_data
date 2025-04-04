@@ -46,5 +46,29 @@
         "name": "yahya",
         "email": "yahya@gmail.com",
         "password": "$2y$10$cDOEvLTTitwM0T0rRmBMrumeot0DlTvCraDEIRuuFa3zRwC3NEBh2"
+    },
+    {
+        "id": 9,
+        "name": "ali yasser",
+        "email": "ali@gmail.com",
+        "password": "$2y$10$PXdGuBC\/x7U9UQbuLC.48OUGGfmCxKpV0z..OyQ.pqEbThN24qtIm"
+    },
+    {
+        "id": 10,
+        "name": "yahya",
+        "email": "yahaya@gmail.com",
+        "password": "$2y$10$T\/nXGmVqTVu4sXR1FDLHQO2s2uuhpPBCVc4OQ5f2dpKF2.JxGJn3S"
+    },
+    {
+        "id": 11,
+        "name": "Mustafa Khalid abd elmonem elkhokh ",
+        "email": "mustafaelkhokhy@gmail.com",
+        "password": "$2y$10$xXg5JATARIFsjXKIRBq3BOncRn7E7ZBvi2VWG8PPPZFiW9Pd6FfJG"
+    },
+    {
+        "id": 12,
+        "name": "Alika Gould",
+        "email": "pikav@mailinator.com",
+        "password": "$2y$10$P\/3qARglnetFLTX4W26rFupoOAUoJ5V3b5z7XpPSdakt1QJYmAPuK"
     }
 ]

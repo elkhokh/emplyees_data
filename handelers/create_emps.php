@@ -13,8 +13,6 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         $type=$_POST['type'];
 
     $type_of_error=valid_all_data($name,$email,$salary,$phone,$type);
-    print_r($type_of_error);
-    exit;
     if(is_array($type_of_error)){
         
     if(add_data_in_json($type_of_error)){

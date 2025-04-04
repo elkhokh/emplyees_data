@@ -1,21 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "mostafa khalid ya",
-        "email": "mustafaelkhokhy@gmail.com",
-        "salary": "800000",
-        "phone": "01004643861",
-        "type": "part_time"
-    },
-    {
-        "id": 2,
-        "name": "yahya weal",
-        "email": "yahaya@gmail.com",
-        "salary": "86455",
-        "phone": "01004643861",
-        "type": "part_time"
-    },
-    {
         "id": 3,
         "name": "sara khalid",
         "email": "sara@gmail.com",
@@ -29,14 +13,6 @@
         "email": "ali@gmail.com",
         "salary": "8947",
         "phone": "01065689",
-        "type": "full_time"
-    },
-    {
-        "id": 7,
-        "name": "yahya",
-        "email": "UG_31093658@f-eng.tanta.edu.eg",
-        "salary": "487874",
-        "phone": "0115495",
         "type": "full_time"
     },
     {
@@ -56,15 +32,7 @@
         "id": 9
     },
     {
-        "name": "yahya",
-        "email": "mustafaelkhokhy@gmail.com",
-        "salary": "2342332",
-        "phone": "234234",
-        "type": "full_time",
-        "id": 10
-    },
-    {
-        "name": "yahya",
+        "name": "ali",
         "email": "mustafaelkhokhy@gmail.com",
         "salary": "3333",
         "phone": "3333",
@@ -78,5 +46,13 @@
         "phone": "9279198901",
         "type": "part_time",
         "id": 12
+    },
+    {
+        "name": "Mustafa Khalid abd elmonem elkhokh ",
+        "email": "mustafaelkhokhy@gmail.com",
+        "salary": "40011564998798",
+        "phone": "010004643861",
+        "type": "part_time",
+        "id": 13
     }
 ]

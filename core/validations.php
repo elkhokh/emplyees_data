@@ -83,7 +83,7 @@ $data_reg=[
     'name'=>$name,
     'email'=>$email,
     'password'=>$password,
-    'confirm_passowrd'=>$confirm_passowrd
+    'confirm_password'=>$confirm_passowrd,
 ];
 
 foreach($data_reg as $key =>$value){

@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $name=$_POST['name'];
     $email=$_POST['email'];
     $password=trim($_POST['password']);
-    $confirm_passowrd=trim($_POST['confirm_passowrd']);
+    $confirm_passowrd=trim($_POST['confirm_password']);
 
 
 $type_of_error=valid_register($name,$email,$password,$confirm_passowrd);

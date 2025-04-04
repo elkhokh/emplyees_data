@@ -15,25 +15,16 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $phone=$_POST['phone'];
     $type=$_POST['type'];
 
-    $type_of_error=valid_all_data($name,$email,$salary,$phone,$type);
-    // print_r($type_of_error);
+    $data_update=valid_all_data($name,$email,$salary,$phone,$type);
+    // print_r($data_update);
     // exit;
 
-if(!empty($type_of_error)){
-set_messages('danger',$type_of_error);
-header("location: ../edit_emps.php?id=$value_id");
+if(!is_array($data_update)){
+set_messages('danger',$data_update);
+header("location: ../edit.php?id=$value_id");
 exit;
 }
-
-$data_update =[
-    'id'=>$value_id,
-    'name'=>$name,
-    'email'=>$email,
-    'salary'=>$salary,
-    'phone' => $phone,
-    'type' => $type,
-]; 
-
+$data_update['id']=$value_id;
 
 if(update_data_in_json($value_id,$data_update)){
     set_messages('success',"data updated successfully");

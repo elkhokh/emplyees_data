@@ -15,9 +15,10 @@ function show_message(){
     if(isset($_SESSION['message'])){
         $type = $_SESSION['message']['type'];//success or danger
         $text = $_SESSION['message']['text'];// email or name etc 
-echo "<div class='alert alert-$type'>$text</div>";
-unset($_SESSION['message']);
-    }   }
+        echo "<div class='alert alert-$type'>$text</div>";
+        unset($_SESSION['message']);
+    }   
+}
 
     $json_file=realpath(__DIR__ . "/../data/emp.json");
     function add_data_in_json(array $elemnt){

@@ -16,8 +16,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $type=$_POST['type'];
 
     $data_update=valid_all_data($name,$email,$salary,$phone,$type);
-    // print_r($data_update);
-    // exit;
 
 if(!is_array($data_update)){
 set_messages('danger',$data_update);

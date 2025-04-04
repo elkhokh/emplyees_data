@@ -59,7 +59,7 @@ function valid_password($password){
         return "password must be greater than 6";
     }
 }
-function valid_register(){
+function valid_register($name,$email,$password,$confirm_passowrd){
 
 }
 

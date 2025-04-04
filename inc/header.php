@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,10 +23,10 @@
     </style>
 </head>
 <body>
-    <?php include "nav.php"; ?>
+    <?php include "inc/nav.php"; ?>
     <?php 
     // include "./core/functions.php";
-    include __DIR__ . "/../core/functions.php";
+    include  "core/functions.php";
     ?>
     <div class="container content mt-4">
         <?php show_message() ;

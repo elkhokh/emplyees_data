@@ -20,8 +20,11 @@ include_once __DIR__ . "../core/functions.php";
     <tbody>
         <?php
 $users = get_data_from_json(); 
+// print_r($users);
+// exit;
             foreach ($users as $user) {
-                if (!empty($user)) {
+                if (!empty($user))
+                 {
                     echo "<tr>
                         <td>{$user['id']}</td>
                         <td>{$user['name']}</td>
@@ -37,7 +40,8 @@ $users = get_data_from_json();
                     </form>
                     </td>
                     </tr>";
-                }}
+                }
+            }
         ?>
     </tbody>
 </table>

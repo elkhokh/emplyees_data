@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include __DIR__ . "/../core/validations.php";
 include __DIR__ . "/../core/functions.php";
 
@@ -13,8 +15,6 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $phone=$_POST['phone'];
     $type=$_POST['type'];
 
-
-
     $type_of_error=valid_all_data($name,$email,$salary,$phone,$type);
 
 if(!empty($type_of_error)){
@@ -22,7 +22,6 @@ set_messages('danger',$type_of_error);
 header("location: ../edit_emps.php?id=$id");
 exit;
 }
-
 
 $data_update =[
     'id'=>$value_id,

@@ -1,5 +1,6 @@
 <?php
-// include __DIR__ . "/../core/validations.php";
+session_start();
+
 include __DIR__ . "/../core/functions.php";
 
 

@@ -9,27 +9,30 @@ function santize_data($name,$email,$salary,$phone){
     $name = filter_var($name, FILTER_SANITIZE_STRING);
     $salary = filter_var($salary,FILTER_SANITIZE_NUMBER_INT);
     $phone = filter_var($phone,FILTER_SANITIZE_NUMBER_INT);
+    // echo $name;
+    // exit;
     return [
-        'name' => $name,
+        'name' => htmlspecialchars($name) ,
         'email' => $email,
         'salary' => $salary,
         'phone' => $phone
     ];
+
 }
     // check validation email
 function valid_email($email){
     return filter_var($email,FILTER_VALIDATE_EMAIL)?null:"valid email, you hack me man !!";}
 // check validation salary
 function valid_salary($salary){
-    return (is_numeric($salary)&&$salary>0)?null:"can you enter your data ture";}
+    return (is_numeric($salary)&&$salary>0)?null:"can you enter your salary ture";}
 
 function valid_phone($phone){
-    return (is_numeric($phone))?null:"can you enter your data ture";}
+    return (is_numeric($phone))?null:"can you enter your phone ture";}
 
 function valid_all_data($name,$email,$salary,$phone,$type){
     
     $sanitized = santize_data($name, $email, $salary, $phone);
-    $sanitized['name']=$type;
+    $sanitized['type']=$type;
     // print_r($sanitized);
     // exit;
   
@@ -47,7 +50,7 @@ function valid_all_data($name,$email,$salary,$phone,$type){
     if($type_of_error=valid_phone($phone)){
         return $type_of_error;}
 
-        return null;
+        return $sanitized;
 }
 
 

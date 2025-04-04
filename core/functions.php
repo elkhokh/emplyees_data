@@ -1,17 +1,19 @@
 <?php
-// session_start();
-// in this function i have to parameter type of alert danger or success and type of empty data from type_of_error
-function set_messages($type_of_alert,$message_of_error){
-    // echo 'welcome';
-    // exit;
-$_SESSION['message']=[
-    'type'=>$type_of_alert,
-    'text'=>$message_of_error,
-];
-// print_r($_SESSION['message']);
-}
 
-function show_message(){
+$json_file=realpath(__DIR__ . "/../data/emp.json");
+$json_file_user=realpath(__DIR__ . "/../data/users.json");
+
+
+function set_messages($type_of_alert,$message_of_error)
+{
+    $_SESSION['message']=[
+        'type'=>$type_of_alert,
+        'text'=>$message_of_error,
+    ];
+
+}
+function show_message()
+{
     if(isset($_SESSION['message'])){
         $type = $_SESSION['message']['type'];//success or danger
         $text = $_SESSION['message']['text'];// email or name etc 
@@ -19,129 +21,167 @@ function show_message(){
         unset($_SESSION['message']);
     }   
 }
-
-    $json_file=realpath(__DIR__ . "/../data/emp.json");
-    function add_data_in_json(array $elemnt){
-        $user_data=file_exists($GLOBALS['json_file'])?json_decode(file_get_contents($GLOBALS['json_file']),true):[];
-        
-        if(!is_array($user_data)){
-            $user_data=[];}
-            $value_id=empty($user_data)?1:max(array_column($user_data,'id') )+1;
-            
-// var_dump($get_key);
-// exit;
-        
-      $elemnt['id']=$value_id;
-
-        $user_data[]=$elemnt;
-        file_put_contents($GLOBALS['json_file'],json_encode($user_data,JSON_PRETTY_PRINT));
-        return true;
-    }
-    function get_data_from_json()
+//  git files from json
+function get_data_from_json($file_name = '')
+{
+    if($file_name == '')
     {
-        // global $json_file;
-        // $file = realpath(__DIR__ . "/../data/emp.json");
-        $file=$GLOBALS['json_file'];
-        return file_exists($file) ? json_decode(file_get_contents($file), true) : [];
-    }
-    // print_r(get_data_from_json());
-
-function update_data_in_json($value_id,$data_update){
-    $file=$GLOBALS['json_file'];
-    $data_emps =file_exists($file) ? json_decode(file_get_contents($file), true) : [];
-    if(!$data_emps) {
-        return false;
+        $file_name = $GLOBALS['json_file'];
     }
 
-$flage=false;
-    foreach($data_emps as &$emp){
-        if($emp['id']==$value_id){
-            $emp['name']=$data_update['name'];
-            $emp['email']=$data_update['email'];
-            $emp['salary']=$data_update['salary'];
-            $emp['phone']=$data_update['phone'];
-            $emp['type']=$data_update['type'];
-            $flage=true;
-            break;
-        }
-    }
-    if(!$flage){
+    if(!file_exists($file_name))
+    {
         return false;
     }
-    file_put_contents($file,json_encode($data_emps,JSON_PRETTY_PRINT));
+    
+    $file =  file_exists($file_name  ) ? json_decode(file_get_contents($file_name ), true) : [];
+
+    if(!is_array($file))
+    {
+        set_data_in_json([] , $file);
+    }
+    return $file;
+    
+}
+
+function set_data_in_json(array $data , $file = '')
+{
+    if(!$file)
+    {
+        $file = $GLOBALS['json_file'];
+    }
+
+    if(!file_exists($file))
+    {
+        return false;
+    }
+    file_put_contents($file,json_encode($data,JSON_PRETTY_PRINT));
     return true;
 }
 
-function delete_data_in_json($value_id){
-    $file=$GLOBALS['json_file'];
-    if(!file_exists($file)) {
-        return false;
-}
-    $data_emps = json_decode(file_get_contents($file), true) ;
-    if(!$data_emps) {
-        return false;
-}
 
-$flage=false;
-    foreach($data_emps as $key => $emp){
-        if($emp['id']==$value_id){
-            unset($data_emps[$key]);
-            $flage=true;
-            break;
+
+    
+function add_data_in_json(array $data){
+    $old_data= get_data_from_json();
+    
+    $old_data = is_array($old_data) ?   $old_data : [] ;
+    
+    $id=  empty($old_data)  ? 1 :  max(array_column($old_data,'id') ) + 1;
+    
+    $data['id']=$id;
+
+    $old_data[]=$data;
+
+    set_data_in_json($old_data);
+
+    return true;
+}
+    
+
+function update_data_in_json($data_update){
+    $all_data = get_data_from_json();
+
+    if(!$all_data) {
+        return false;
+    }
+
+
+    foreach($all_data as &$emp){
+        if( $emp['id']  ==  $data_update['id']){
+
+            $emp['name']    =$data_update['name'];
+            $emp['email']   =$data_update['email'];
+            $emp['salary']  =$data_update['salary'];
+            $emp['phone']   =$data_update['phone'];
+            $emp['type']    =$data_update['type'];
+            
+            set_data_in_json($all_data);
+
+            return true;
         }
     }
-    if(!$flage){
-        return false;
-    }
-    $data_emps=array_values($data_emps);
-    file_put_contents($file,json_encode($data_emps,JSON_PRETTY_PRINT));
-    return true;
-
+    
+    return false;
 }
 
-$json_file_user=realpath(__DIR__ . "/../data/users.json");
+function delete_data_in_json($id){
+    $data = get_data_from_json();
+    
+    if(!$data)
+    {
+        return false;
+    }
+
+    foreach($data as $key => $emp){
+
+        if($emp['id'] == $id)
+        {
+            unset($data[$key]);
+            set_data_in_json(array_values($data));
+            return true;
+        }
+    }
+    
+    return false;
+}
+
 
 function register_user($name,$email,$password){
-    $user_data=file_exists($GLOBALS['json_file_user'])?json_decode(file_get_contents($GLOBALS['json_file_user']),true):[];
+
+    $data= get_data_from_json($GLOBALS['json_file_user']);
+
+    $hashpassowrd=password_hash($password,PASSWORD_DEFAULT);
+
+    $data = is_array($data) ? $data : [];
     
-    if(!is_array($user_data)){
-        $user_data=[];
-    }
-    // $var=base64_encode('mostafa');
-// echo $var.'<br>'; 
-//  echo base64_decode($var);
-        $value_id=empty($user_data)?1:max(array_column($user_data,'id') )+1;
-        $hashpassowrd=password_hash($password,PASSWORD_DEFAULT);
-$data_of_register=[
-    'id'=>$value_id,
-    'name'=>$name,
-    'email'=>$email,
-    'password'=>$hashpassowrd
-];
-    $user_data[]=$data_of_register;
-    file_put_contents($GLOBALS['json_file_user'],json_encode($user_data,JSON_PRETTY_PRINT));
-    $_SESSION['user']=[
+    $id = empty($data) ? 1 : (int) max(array_column($data,'id')) + 1 ;
+
+    $data[] =
+    [
+        'id'=>$id , 
         'name'=>$name,
         'email'=>$email,
+        'password'=>$hashpassowrd
     ];
+
+        set_data_in_json($data , $GLOBALS['json_file_user']);
+
+        create_user_session([
+            'name'=>$name,
+            'email'=>$email,
+        ]);
     
     return true;
 }
 
 function login_user($email,$password){
-    $user_data=file_exists($GLOBALS['json_file_user'])?json_decode(file_get_contents($GLOBALS['json_file_user']),true):[];
     
-    if(!is_array($user_data)){
-        $user_data=[];
-    }
-    foreach($user_data as $user){
+    $data= get_data_from_json($GLOBALS['json_file_user']);
+
+    $data = is_array($data) ? $data : [];
+
+    foreach($data as $user){
+
         if($user['email']==$email && password_verify($password,$user['password'])){
-            $_SESSION['user']=[
+            create_user_session([
                 'email'=>$email,
                 'name'=>$user['name']
-            ];
+            ]);
             return true; 
         }
     }
     return false;
 }
+
+function create_user_session($array):void
+{
+    if(isset($_SESSION['user']))
+    {
+        unset($_SESSION['user']);
+    }
+        $_SESSION['user']= $array;
+
+}
+
+

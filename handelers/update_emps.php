@@ -24,7 +24,7 @@ exit;
 }
 $data_update['id']=$value_id;
 
-if(update_data_in_json($value_id,$data_update)){
+if(update_data_in_json($data_update)){
     set_messages('success',"data updated successfully");
     header("location: ../show_data.php");
     exit;

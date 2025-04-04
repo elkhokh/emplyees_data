@@ -98,3 +98,26 @@ $flage=false;
     return true;
 
 }
+
+$json_file_user=realpath(__DIR__ . "/../data/users.json");
+
+function register_user($name,$email,$password){
+    $user_data=file_exists($GLOBALS['json_file_user'])?json_decode(file_get_contents($GLOBALS['json_file_user']),true):[];
+    
+    if(!is_array($user_data)){
+        $user_data=[];
+    }
+        $value_id=empty($user_data)?1:max(array_column($user_data,'id') )+1;
+        $hashpassowrd=password_hash($password,PASSWORD_DEFAULT);
+$data_of_register=[
+    'id'=>$value_id,
+    'name'=>$name,
+    'email'=>$email,
+    'password'=>$hashpassowrd
+];
+    $user_data[]=$data_of_register;
+    // print_r($user_data);
+    // exit;
+    file_put_contents($GLOBALS['json_file_user'],json_encode($user_data,JSON_PRETTY_PRINT));
+    return true;
+}

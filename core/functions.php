@@ -107,6 +107,9 @@ function register_user($name,$email,$password){
     if(!is_array($user_data)){
         $user_data=[];
     }
+    // $var=base64_encode('mostafa');
+// echo $var.'<br>'; 
+//  echo base64_decode($var);
         $value_id=empty($user_data)?1:max(array_column($user_data,'id') )+1;
         $hashpassowrd=password_hash($password,PASSWORD_DEFAULT);
 $data_of_register=[
@@ -116,8 +119,28 @@ $data_of_register=[
     'password'=>$hashpassowrd
 ];
     $user_data[]=$data_of_register;
-    // print_r($user_data);
-    // exit;
     file_put_contents($GLOBALS['json_file_user'],json_encode($user_data,JSON_PRETTY_PRINT));
+    $_SESSION['user']=[
+        'name'=>$name,
+        'email'=>$email,
+    ];
     return true;
+}
+
+function login_user($email,$password){
+    $user_data=file_exists($GLOBALS['json_file_user'])?json_decode(file_get_contents($GLOBALS['json_file_user']),true):[];
+    
+    if(!is_array($user_data)){
+        $user_data=[];
+    }
+    foreach($user_data as $user){
+        if($user['email']==$email && password_verify($password,$user['password'])){
+            $_SESSION['user']=[
+                'email'=>$email,
+                'password'=>$password,
+            ];
+            return true; 
+        }
+    }
+    return false;
 }

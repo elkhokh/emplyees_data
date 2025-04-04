@@ -76,7 +76,7 @@ function valid_all_data($name,$email,$salary,$phone,$type){
 }
 
 function check_confirm_password_valid($password,$confirm_password){
-    return ($password===$confirm_password)? null :"NOt the same confirm Password";
+    return ($password===$confirm_password)? null :"Password is NOT the same confirm Password";
 }
 function valid_register($name,$email,$password,$confirm_passowrd){
 $data_reg=[
@@ -103,6 +103,22 @@ if($type_of_error=check_confirm_password_valid($password,$confirm_passowrd)){
     return $data_reg;
 }
 
+function valid_login($email,$password){
+    $data_reg=[
+        'email'=>$email,
+        'password'=>$password,
+    ];
+    
+    foreach($data_reg as $key =>$value){
+        if($type_of_error=valid_data_require($value,$key)){
+            return $type_of_error;}
+    }
+    
+    if($type_of_error=valid_email($email)){
+        return $type_of_error;}
+    
+        return $data_reg; 
+}
 
 
 

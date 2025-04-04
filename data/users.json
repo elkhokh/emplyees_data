@@ -10,5 +10,35 @@
         "name": "Winifred England",
         "email": "jekufupev@mailinator.com",
         "password": "$2y$10$ADj6QUbyuJ3clQdSA50DDuIsA1DLw6JcxjKvWt0m\/jnG3.eWv5uvu"
+    },
+    {
+        "id": 3,
+        "name": "Kasimir Farley",
+        "email": "giziguzig@mailinator.com",
+        "password": "$2y$10$vXZ2G2stDrmIQGZqRLqNd.Ee.\/yfF\/rlUUoYGzm02GmYuKRAwC8nG"
+    },
+    {
+        "id": 4,
+        "name": "James Nicholson",
+        "email": "cobeny@mailinator.com",
+        "password": "$2y$10$CY2X0WUuXcH.DNTFJvJYtO2IQDLxHY73WRt2wz141pbT1sq\/5GOuy"
+    },
+    {
+        "id": 5,
+        "name": "Quinn Sargent",
+        "email": "jygobi@mailinator.com",
+        "password": "$2y$10$Q7Cx\/EtJZ37.Nk.szASVROd63GiHRcPfz\/xOhurq7EZ1Vz.wa39Y2"
+    },
+    {
+        "id": 6,
+        "name": "ali",
+        "email": "mustafaelkhokhy@gmail.com",
+        "password": "$2y$10$yc55ZlEtvXqp5paU1yuB2.A1iIs.BJs2qUvTcihw9AypAUUuDGo9O"
+    },
+    {
+        "id": 7,
+        "name": "mostafa",
+        "email": "mustafaelkhokhy@gmail.com",
+        "password": "$2y$10$kpTvNVu6Wat5nHsHWTycgOl424FOxBu4W\/vub9dO5ijb3WI98N5\/u"
     }
 ]

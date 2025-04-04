@@ -18,8 +18,8 @@ $type_of_error=valid_register($name,$email,$password,$confirm_passowrd);
 if(is_array($type_of_error)){
     
     if(register_user($name,$email,$password)){
-        set_messages('success',"data added successfully");
-        header("location: ../register.php");
+        set_messages('success',"Registeration successfully");
+        header("location: ../show_data.php");
         // echo "welldone";
         exit;
     }}
@@ -30,7 +30,7 @@ if(is_array($type_of_error)){
     }
     
     else {
-        set_messages('danger',"fail added data can you try again !!");
+        set_messages('danger',"Fail Registeration can you try again !!");
         header("location: ../register.php");
         exit;
     }

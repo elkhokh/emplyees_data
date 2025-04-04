@@ -32,14 +32,6 @@
         "type": "full_time"
     },
     {
-        "id": 6,
-        "name": "aeoirj",
-        "email": "mustafaelkhokhy@gmail.com",
-        "salary": "478777",
-        "phone": "012494",
-        "type": "full_time"
-    },
-    {
         "id": 7,
         "name": "yahya",
         "email": "UG_31093658@f-eng.tanta.edu.eg",
@@ -78,29 +70,5 @@
         "phone": "3333",
         "type": "full_time",
         "id": 11
-    },
-    {
-        "name": "yahya",
-        "email": "mustafaelkhokhy@gmail.com",
-        "salary": "3333",
-        "phone": "3333",
-        "type": "full_time",
-        "id": 12
-    },
-    {
-        "name": "yahya",
-        "email": "2021301@thiet.edu.eg",
-        "salary": "111",
-        "phone": "01004643861",
-        "type": "full_time",
-        "id": 13
-    },
-    {
-        "name": "Katelyn Francis",
-        "email": "ciqihoj@mailinator.com",
-        "salary": "65",
-        "phone": "044444444444444444",
-        "type": "part_time",
-        "id": 14
     }
 ]

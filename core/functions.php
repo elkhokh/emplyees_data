@@ -8,7 +8,7 @@ $_SESSION['message']=[
     'type'=>$type_of_alert,
     'text'=>$message_of_error,
 ];
-print_r($_SESSION['message']);
+// print_r($_SESSION['message']);
 }
 
 function show_message(){

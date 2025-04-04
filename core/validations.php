@@ -54,6 +54,14 @@ function valid_all_data($name,$email,$salary,$phone,$type){
 }
 
 
+function valid_password($password){
+    if(strlen($password)<6){
+        return "password must be greater than 6";
+    }
+}
+function valid_register(){
+
+}
 
 
 

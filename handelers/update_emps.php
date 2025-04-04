@@ -16,10 +16,12 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $type=$_POST['type'];
 
     $type_of_error=valid_all_data($name,$email,$salary,$phone,$type);
+    // print_r($type_of_error);
+    // exit;
 
 if(!empty($type_of_error)){
 set_messages('danger',$type_of_error);
-header("location: ../edit_emps.php?id=$id");
+header("location: ../edit_emps.php?id=$value_id");
 exit;
 }
 

@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +28,7 @@
     <?php include "inc/nav.php"; ?>
     <?php 
     // include "./core/functions.php";
-    include  "core/functions.php";
+    include_once  "core/functions.php";
     ?>
     <div class="container content mt-4">
         <?php show_message() ;
